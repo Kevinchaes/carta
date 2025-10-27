@@ -36,23 +36,15 @@
     .sparkles{position:fixed; inset:0; pointer-events:none; z-index:-1}
 
     /* Encabezado / Logo del gremio */
-    header{
-      display:flex; align-items:center; gap:16px; padding:20px 24px; position:relative;
-    }
-    .crest{
-      width:48px; height:48px; position:relative; filter:drop-shadow(0 0 10px #ffffff30);
-    }
+    header{ display:flex; align-items:center; gap:16px; padding:20px 24px; position:relative; }
+    .crest{ width:48px; height:48px; position:relative; filter:drop-shadow(0 0 10px #ffffff30); }
     .crest:before, .crest:after{
       content:""; position:absolute; inset:0; border-radius:50%;
       background: conic-gradient(from 0deg, #fff 0 4deg, transparent 4deg 8deg, #fff 8deg 12deg, transparent 12deg 16deg, #fff 16deg 20deg, transparent 20deg 24deg, #fff 24deg 28deg, transparent 28deg);
-      animation: spin 14s linear infinite;
-      opacity:.25;
+      animation: spin 14s linear infinite; opacity:.25;
     }
     .crest:after{ filter:blur(2px); animation-duration:22s; opacity:.4 }
-    .crest .star{
-      position:absolute; inset:8px; border-radius:50%; background:radial-gradient(circle at 50% 45%, #fff, #ffd77b 40%, transparent 60%);
-      box-shadow:0 0 16px 4px #ffd77b50 inset, 0 0 40px #ffd77b55;
-    }
+    .crest .star{ position:absolute; inset:8px; border-radius:50%; background:radial-gradient(circle at 50% 45%, #fff, #ffd77b 40%, transparent 60%); box-shadow:0 0 16px 4px #ffd77b50 inset, 0 0 40px #ffd77b55; }
     @keyframes spin{to{transform:rotate(360deg)}}
 
     .title-wrap{line-height:1}
@@ -66,36 +58,32 @@
     .subtitle{margin:6px 0 0; color:#c7d2fe; font-size:clamp(12px, 2.2vw, 14px); opacity:.85}
 
     /* Contenedor principal */
-    .container{
-      max-width:980px; margin:20px auto 80px; padding:0 16px;
-    }
+    .container{ max-width:980px; margin:20px auto 80px; padding:0 16px; }
 
     /* Tarjeta-pergamino */
     .scroll{
       position:relative; padding:28px 24px 24px; border-radius:20px; background:var(--paper);
-      border:1px solid #ffffff16; box-shadow:0 10px 50px #0008, inset 0 1px 0 #ffffff10;
-      backdrop-filter: blur(8px);
+      border:1px solid #ffffff16; box-shadow:0 10px 50px #0008, inset 0 1px 0 #ffffff10; backdrop-filter: blur(8px);
       overflow:hidden;
     }
     .scroll:before{
-      content:""; position:absolute; inset:-1px; border-radius:22px;
-      padding:1px; background:linear-gradient(120deg, #ffffff18, #ffd77b33, #7cc0ff33, #ffffff18);
+      content:""; position:absolute; inset:-1px; border-radius:22px; padding:1px;
+      background:linear-gradient(120deg, #ffffff18, #ffd77b33, #7cc0ff33, #ffffff18);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events:none;
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none;
     }
 
     /* Cabecera de misión */
-    .mission{
-      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px;
-    }
-    .mission .tag{
-      font-size:12px; letter-spacing:2px; color:#cbd5e1; text-transform:uppercase;
-      border:1px solid #ffffff24; border-radius:999px; padding:6px 10px; backdrop-filter:blur(3px);
-    }
+    .mission{ display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap }
+    .mission .tag{ font-size:12px; letter-spacing:2px; color:#cbd5e1; text-transform:uppercase; border:1px solid #ffffff24; border-radius:999px; padding:6px 10px; backdrop-filter:blur(3px); }
 
-    .hero-line{
-      font-family:"Marcellus", serif; font-size:clamp(18px, 3vw, 24px); margin:8px 0 16px;
+    .hero-line{ font-family:"Marcellus", serif; font-size:clamp(18px, 3vw, 24px); margin:8px 0 16px; }
+
+    /* Inputs */
+    .name-box{ display:flex; gap:10px; align-items:center; }
+    .input{
+      background:#0f172a; border:1px solid #ffffff26; color:#e5e7eb; padding:10px 12px; border-radius:10px; min-width:220px;
+      outline:none; box-shadow:inset 0 1px 0 #ffffff10;
     }
 
     /* Texto con máquina de escribir */
@@ -103,7 +91,7 @@
     .typewriter .tw-chunk{ display:inline; opacity:0; animation: tw var(--speed) steps(1) forwards; }
     @keyframes tw{ to{ opacity:1 } }
 
-    .note{ color:var(--muted); font-size:14px; margin:12px 0 6px; }
+    .note{ color:#a5b4fc; font-size:14px; margin:12px 0 6px; }
 
     /* Acrostico y líneas principales */
     .lines{ margin:18px 0 10px; }
@@ -120,23 +108,16 @@
 
     /* Botones */
     .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px }
-    .btn{
-      appearance:none; border:none; cursor:pointer; border-radius:12px; padding:10px 14px;
-      background:linear-gradient(180deg, #1e293b, #0f172a); color:#e2e8f0; font-weight:600;
-      box-shadow:0 6px 20px #0007, inset 0 1px 0 #ffffff16; border:1px solid #ffffff1a;
-      transition:transform .08s ease, box-shadow .2s ease, background .2s ease; font-size:14px;
-    }
+    .btn{ appearance:none; border:none; cursor:pointer; border-radius:12px; padding:10px 14px; background:linear-gradient(180deg, #1e293b, #0f172a); color:#e2e8f0; font-weight:600; box-shadow:0 6px 20px #0007, inset 0 1px 0 #ffffff16; border:1px solid #ffffff1a; transition:transform .08s ease, box-shadow .2s ease, background .2s ease; font-size:14px; }
     .btn:hover{ transform:translateY(-1px); box-shadow:0 10px 28px #0009 }
     .btn:active{ transform:translateY(0) scale(.98) }
 
-    /* Pie */
     footer{ text-align:center; opacity:.8; font-size:12px; margin-top:20px }
 
     /* Partículas suaves (sparkles) */
     .sparkle{ position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; opacity:.8; filter:blur(.2px); animation: float 8s linear infinite; }
     @keyframes float{ 0%{ transform: translateY(0) } 100%{ transform: translateY(-120vh) } }
 
-    /* Utilidades */
     .hide{ display:none }
     .center{ text-align:center }
   </style>
@@ -149,7 +130,7 @@
     <div class="crest" aria-hidden="true"><div class="star"></div></div>
     <div class="title-wrap">
       <h1 id="title">Gremio Starlight</h1>
-      <div class="subtitle">El Umbral del Corazón Valiente</div>
+      <div class="subtitle" id="subtitle">El Umbral del Corazón Valiente</div>
     </div>
   </header>
 
@@ -157,7 +138,11 @@
     <section class="scroll" id="scroll">
       <div class="mission">
         <div class="tag">Misión de Ingreso</div>
-        <button class="btn" id="revealBtn" aria-pressed="false" aria-controls="acrostic">Pista ✨</button>
+        <div class="name-box" id="nameBox">
+          <input class="input" id="nameInput" placeholder="Escribe el nombre (ej. Samuel)" />
+          <button class="btn" id="enterBtn">Entrar ➜</button>
+        </div>
+        <button class="btn hide" id="revealBtn" aria-pressed="false" aria-controls="acrostic">Pista ✨</button>
       </div>
 
       <p class="hero-line typewriter" id="hero"></p>
@@ -168,16 +153,16 @@
 
       <div class="lines" id="acrostic" role="list">
         <p class="line" role="listitem"><span class="acrostic">S</span><span class="text">ueña alto</span></p>
-        <p class="line" role="listitem"><span class="acrostic">A</span><span class="text">máte como Dios te ama</span></p>
-        <p class="line" role="listitem"><span class="acrostic">M</span><span class="text">antén tu corazón valiente</span></p>
-        <p class="line" role="listitem"><span class="acrostic">U</span><span class="text">n paso a la vez, aunque sea pequeño</span></p>
-        <p class="line" role="listitem"><span class="acrostic">E</span><span class="text">lige siempre el bien, aunque cueste</span></p>
-        <p class="line" role="listitem"><span class="acrostic">L</span><span class="text">uz hay en ti, brilla sin miedo</span></p>
+        <p class="line" role="listitem"><span class="acrostic">A</span><span class="text">Ámate como Dios te ama</span></p>
+        <p class="line" role="listitem"><span class="acrostic">M</span><span class="text">Mantén tu corazón valiente</span></p>
+        <p class="line" role="listitem"><span class="acrostic">U</span><span class="text">Un paso a la vez, aunque sea pequeño</span></p>
+        <p class="line" role="listitem"><span class="acrostic">E</span><span class="text">Elige siempre el bien, aunque cueste</span></p>
+        <p class="line" role="listitem"><span class="acrostic">L</span><span class="text">Luz hay en ti, brilla sin miedo</span></p>
       </div>
 
       <div class="typewriter" id="body2"></div>
 
-      <p class="center" style="margin-top:16px">Con cariño y emoción,<br>Tu tío que te admira ✨</p>
+      <p class="center" style="margin-top:16px">Con cariño y emoción,<br><span id="signature">Tu tío que te admira ✨</span></p>
 
       <div class="actions">
         <button class="btn" id="confettiBtn">¡Amén y adelante! 🎇</button>
@@ -191,8 +176,11 @@
     </footer>
   </main>
 
+  <!-- html2canvas para exportar imagen sin transparencia -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
   <script>
-    // ===== Estrellas de fondo (Canvas) =====
+    /* ===== Estrellas de fondo (Canvas) ===== */
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
     const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
@@ -205,7 +193,6 @@
       canvas.style.height = innerHeight + 'px';
       spawn();
     }
-
     function spawn(){
       const count = Math.floor((innerWidth * innerHeight) / 8000);
       stars = new Array(count).fill(0).map(()=>({
@@ -216,23 +203,19 @@
         tw: Math.random()*0.02+0.005
       }));
     }
-
     function loop(){
       ctx.clearRect(0,0,W,H);
       for(const s of stars){
         s.a += s.tw; const alpha = 0.5 + Math.sin(s.a)*0.5;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle = `rgba(255,255,255,${alpha})`;
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(255,255,255,${alpha})`; ctx.fill();
       }
       requestAnimationFrame(loop);
     }
-
     addEventListener('resize', resize);
     resize(); loop();
 
-    // ===== Brillos ascendentes (sparkles) =====
+    /* ===== Brillos ascendentes (sparkles) ===== */
     const sparkles = document.getElementById('sparkles');
     function makeSparkles(){
       const n = 36;
@@ -249,10 +232,10 @@
     }
     makeSparkles();
 
-    // ===== Máquina de escribir simple =====
+    /* ===== Máquina de escribir simple ===== */
     function typeInto(el, text, baseDelay=22){
       el.innerHTML = '';
-      const parts = text.split(/(\*\*[^*]+\*\*|—|\n)/g).filter(Boolean);
+      const parts = String(text).split(/(\*\*[^*]+\*\*|—|\n)/g).filter(Boolean);
       let time = 0;
       parts.forEach(p=>{
         const span = document.createElement('span');
@@ -260,52 +243,70 @@
         span.style.animationDelay = time + 'ms';
         span.textContent = p;
         el.appendChild(span);
-        // pausas más largas tras saltos de línea o em dashes
         const extra = (/\n|—/.test(p)) ? 200 : 0;
         time += Math.max(30, baseDelay * Math.max(1, p.length/6)) + extra;
       });
     }
 
-    // ===== Contenidos =====
-    const heroTxt = '¡Bienvenido, querido aventurero!';
-
+    /* ===== Contenidos base ===== */
+    const heroBase = '¡Bienvenido, querido aventurero!';
     const body1Txt = `Sé que esta convivencia es más que juegos y risas — es un lugar donde los Sueños se despiertan,\n`+
       `donde Ángeles caminan cerca (aunque a veces se disfrazan de compañeros chistosos), y donde momentos que parecen simples\n`+
       `pueden convertirse en recuerdos eternos.`;
-
     const body2Txt = `No olvides que aunque haya desafíos, Una chispa de fe puede encender un día entero.\n`+
       `El Señor tiene planes increíbles para ti, incluso en los detalles — tal vez justo en este instante mientras lees, Él ya está sonriendo.\n\n`+
       `Que regreses con historias épicas, risas nuevas y un fuego más fuerte en el corazón.\n\n`+
       `¡Y prepárate, porque sé que Dios ya está escribiendo una misión grande con tu nombre!`;
 
-    typeInto(document.getElementById('hero'), heroTxt, 20);
-    setTimeout(()=> typeInto(document.getElementById('body1'), body1Txt, 18), 600);
-    setTimeout(()=> typeInto(document.getElementById('body2'), body2Txt, 18), 2200);
+    const heroEl = document.getElementById('hero');
+    const body1El = document.getElementById('body1');
+    const body2El = document.getElementById('body2');
+    const subtitleEl = document.getElementById('subtitle');
+    const signatureEl = document.getElementById('signature');
 
-    // ===== Pista / Revelar acróstico =====
-    const scroll = document.getElementById('scroll');
+    typeInto(heroEl, heroBase, 20);
+    setTimeout(()=> typeInto(body1El, body1Txt, 18), 600);
+    setTimeout(()=> typeInto(body2El, body2Txt, 18), 2200);
+
+    /* ===== Entrada de nombre y revelación ===== */
+    const nameBox = document.getElementById('nameBox');
+    const nameInput = document.getElementById('nameInput');
+    const enterBtn = document.getElementById('enterBtn');
     const revealBtn = document.getElementById('revealBtn');
+    const scrollCard = document.getElementById('scroll');
+
+    function sanitizeName(str){
+      return String(str||'').trim().replace(/\s+/g,' ').slice(0,40);
+    }
+    function personalize(){
+      const name = sanitizeName(nameInput.value) || 'Aventurero';
+      const customHero = `¡Bienvenido, ${name}, valiente aventurero!`;
+      typeInto(heroEl, customHero, 18);
+      subtitleEl.textContent = `Carta para ${name} — El Umbral del Corazón Valiente`;
+      signatureEl.textContent = `Tu tío que te admira ✨`;
+      nameBox.classList.add('hide');
+      revealBtn.classList.remove('hide');
+      nameInput.blur();
+    }
+    enterBtn.addEventListener('click', personalize);
+    nameInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ personalize(); } });
     revealBtn.addEventListener('click', ()=>{
-      const on = scroll.classList.toggle('reveal');
+      const on = scrollCard.classList.toggle('reveal');
       revealBtn.setAttribute('aria-pressed', String(on));
       revealBtn.textContent = on ? 'Ocultar pista ✨' : 'Pista ✨';
     });
 
-    // ===== Copiar carta =====
+    /* ===== Copiar carta ===== */
     const copyBtn = document.getElementById('copyBtn');
     copyBtn.addEventListener('click', async ()=>{
-      const lines = Array.from(document.querySelectorAll('#acrostic .line .text')).map(el=>el.textContent.trim());
-      const full = [heroTxt, '', body1Txt.replace(/\n/g,' '), '', 'Sueña alto', 'Ámate como Dios te ama', 'Mantén tu corazón valiente', 'Un paso a la vez, aunque sea pequeño', 'Elige siempre el bien, aunque cueste', 'Luz hay en ti, brilla sin miedo', '', body2Txt.replace(/\n/g,' '), '', 'Con cariño y emoción,', 'Tu tío que te admira ✨'].join('\n');
-      try{
-        await navigator.clipboard.writeText(full);
-        copyBtn.textContent = '¡Copiado! ✅';
-        setTimeout(()=> copyBtn.textContent = 'Copiar carta 📋', 1600);
-      }catch(e){
-        alert('No se pudo copiar automáticamente. Selecciona el texto y copia manualmente.');
-      }
+      const name = sanitizeName(nameInput.value) || 'Aventurero';
+      const fullHero = `¡Bienvenido, ${name}, valiente aventurero!`;
+      const full = [fullHero, '', body1Txt.replace(/\n/g,' '), '', 'Sueña alto', 'Ámate como Dios te ama', 'Mantén tu corazón valiente', 'Un paso a la vez, aunque sea pequeño', 'Elige siempre el bien, aunque cueste', 'Luz hay en ti, brilla sin miedo', '', body2Txt.replace(/\n/g,' '), '', 'Con cariño y emoción,', 'Tu tío que te admira ✨'].join('\n');
+      try{ await navigator.clipboard.writeText(full); copyBtn.textContent='¡Copiado! ✅'; setTimeout(()=> copyBtn.textContent='Copiar carta 📋', 1600); }
+      catch{ alert('No se pudo copiar automáticamente. Selecciona el texto y copia manualmente.'); }
     });
 
-    // ===== Confeti sencillo =====
+    /* ===== Confeti sencillo ===== */
     const confettiBtn = document.getElementById('confettiBtn');
     confettiBtn.addEventListener('click', ()=>{
       for(let i=0;i<80;i++){
@@ -324,57 +325,26 @@
       }
     });
 
-    // ===== Guardar como imagen (html2canvas-lite sin dependencias: rasteriza sección con drawWindow fallback) =====
-    // Nota: Este método es una aproximación; para una exportación perfecta se recomienda usar una librería dedicada.
+    /* ===== Guardar como imagen con html2canvas (sin transparencia) ===== */
     const saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', async ()=>{
-      const section = document.querySelector('.scroll');
-      const rect = section.getBoundingClientRect();
-      const shot = document.createElement('canvas');
-      const scale = Math.min(2, (window.devicePixelRatio||1));
-      shot.width = rect.width * scale; shot.height = rect.height * scale;
-      const sctx = shot.getContext('2d');
-      sctx.scale(scale, scale);
-      // Fondo aproximado
-      sctx.fillStyle = getComputedStyle(document.body).backgroundColor || '#0b0f1a';
-      sctx.fillRect(0,0,shot.width, shot.height);
+      const node = document.querySelector('.scroll');
+      const bg = getComputedStyle(document.body).backgroundColor || '#0b0f1a';
+      saveBtn.disabled = true; saveBtn.textContent = 'Generando…';
       try{
-        // Intento rápido: drawImage del canvas de estrellas para añadir ambiente
-        sctx.drawImage(canvas, -rect.left, -rect.top);
-      }catch{}
-      // Texto (simplificado): clonamos la sección y extraemos texto
-      const clone = section.cloneNode(true);
-      clone.style.position='fixed'; clone.style.left='-99999px'; clone.style.top='0';
-      document.body.appendChild(clone);
-      // Recolectar textos con estilos básicos
-      sctx.fillStyle = '#e5e7eb';
-      sctx.font = '16px Poppins, Arial';
-      let y = 24; const x = 20; const lineH = 22; const maxW = rect.width - 40;
-      function drawLinesFrom(element){
-        const nodes = element.querySelectorAll('h1, .subtitle, .hero-line, .typewriter, .line, p');
-        nodes.forEach(n=>{
-          const text = n.classList.contains('line') ? (n.innerText.trim()) : (n.textContent.trim());
-          if(!text) return;
-          const words = text.split(/\s+/);
-          let line = '';
-          words.forEach(w=>{
-            const test = line ? line + ' ' + w : w;
-            const width = sctx.measureText(test).width;
-            if(width > maxW){ sctx.fillText(line, x, y); y += lineH; line = w; }
-            else line = test;
-          });
-          if(line){ sctx.fillText(line, x, y); y += lineH; }
-          y += 6;
-        });
-      }
-      drawLinesFrom(clone);
-      document.body.removeChild(clone);
-      const a = document.createElement('a');
-      a.download = 'Carta_Gremio_Samuel.png';
-      a.href = shot.toDataURL('image/png');
-      a.click();
+        const shot = await html2canvas(node, { backgroundColor: bg, useCORS: true, scale: Math.min(2, window.devicePixelRatio||1.5) });
+        const a = document.createElement('a');
+        a.download = 'Carta_Gremio_Samuel.png';
+        a.href = shot.toDataURL('image/png');
+        a.click();
+        saveBtn.textContent = '¡Imagen guardada! ✅';
+        setTimeout(()=> saveBtn.textContent='Guardar como imagen 🖼️', 1800);
+      }catch(e){
+        console.error(e);
+        alert('No se pudo exportar la imagen en este navegador.');
+        saveBtn.textContent = 'Guardar como imagen 🖼️';
+      }finally{ saveBtn.disabled = false; }
     });
-
   </script>
 </body>
 </html>
